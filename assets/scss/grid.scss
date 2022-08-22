@@ -1,0 +1,33 @@
+@import "mixins";
+@include reset;
+
+.container {
+  width: 100%;
+  height: 300px;
+}
+
+@include bgColor("primary", #ee4d2d);
+
+@include bgColor("col", grey);
+
+@include textAlign(center);
+
+@media screen and (min-width: 576px) {
+  @include renderGrid("sm", 4);
+}
+
+@media screen and (min-width: 768px) {
+  @include renderGrid("md", 8);
+}
+
+@media screen and (min-width: 992px) {
+  @include renderGrid("lg", 5);
+}
+
+@media screen and (min-width: 1200px) {
+  @include renderGrid("xl", 5);
+}
+
+@media screen and (min-width: 1400px) {
+  @include renderGrid("xxl", 5);
+}
