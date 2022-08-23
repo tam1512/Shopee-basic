@@ -1,3 +1,4 @@
+@import "variables";
 @mixin renderGrid($size, $margin) {
   @if ($size == "sm") {
     .wide {
@@ -463,6 +464,10 @@
     margin: 0;
     box-sizing: border-box;
   }
+
+  html {
+    font-size: 62.5%;
+  }
 }
 
 @mixin bgColor($key, $color) {
@@ -475,5 +480,83 @@
 @mixin textAlign($value) {
   .text-#{$value} {
     text-align: $value;
+  }
+}
+
+@mixin fullSize {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin fixedFull {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: $text-color;
+  border-radius: 2px;
+  height: 34px;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-weight: 450;
+  background-color: $white-color;
+}
+
+@mixin margin($direction, $value) {
+  @if ($direction == top) {
+    .mt-#{$value} {
+      margin-top: #{$value}px;
+    }
+  } @else if ($direction == right) {
+    .mr-#{$value} {
+      margin-right: #{$value}px;
+    }
+  } @else if ($direction == bottom) {
+    .mb-#{$value} {
+      margin-bottom: #{$value}px;
+    }
+  } @else if ($direction == left) {
+    .ml-#{$value} {
+      margin-left: #{$value}px;
+    }
+  }
+}
+
+@mixin padding($direction, $value) {
+  @if ($direction == top) {
+    .pt-#{$value} {
+      padding-top: #{$value}px;
+    }
+  } @else if ($direction == right) {
+    .pr-#{$value} {
+      padding-right: #{$value}px;
+    }
+  } @else if ($direction == bottom) {
+    .pb-#{$value} {
+      padding-bottom: #{$value}px;
+    }
+  } @else if ($direction == left) {
+    .pl-#{$value} {
+      padding-left: #{$value}px;
+    }
   }
 }
