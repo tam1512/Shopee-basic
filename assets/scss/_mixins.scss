@@ -467,6 +467,7 @@
 
   html {
     font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
   }
 }
 
@@ -558,5 +559,34 @@
     .pl-#{$value} {
       padding-left: #{$value}px;
     }
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexStart {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+@mixin setWH($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin textColor($colorName, $value) {
+  .text-#{$colorName} {
+    color: $value;
   }
 }
