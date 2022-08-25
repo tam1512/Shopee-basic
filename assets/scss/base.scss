@@ -10,7 +10,7 @@
 @include textColor("white", white);
 @include textColor(primary, $primary-color);
 @include textColor(color, $text-color);
-
+@include textColor(subText, $subText-color);
 .btn {
   @include btn;
   &.btn-primary {
@@ -40,5 +40,23 @@
   100% {
     top: 100%;
     // opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

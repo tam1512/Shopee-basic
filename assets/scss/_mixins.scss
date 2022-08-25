@@ -520,6 +520,7 @@
   line-height: 1.6rem;
   font-weight: 450;
   background-color: $white-color;
+  padding: 8px 16px;
 }
 
 @mixin margin($direction, $value) {
@@ -574,6 +575,12 @@
   align-items: center;
 }
 
+@mixin flexAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @mixin flexStart {
   display: flex;
   justify-content: start;
@@ -589,4 +596,16 @@
   .text-#{$colorName} {
     color: $value;
   }
+}
+
+@mixin bb {
+  border-bottom: 1px solid $border-color;
+}
+
+@mixin ellipsis($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -24,6 +24,10 @@
   color: #333;
 }
 
+.text-subText {
+  color: #999;
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -40,6 +44,7 @@
   line-height: 1.6rem;
   font-weight: 450;
   background-color: #fff;
+  padding: 8px 16px;
 }
 .btn.btn-primary {
   background-color: #f1582b;
@@ -63,6 +68,22 @@
   }
   100% {
     top: 100%;
+  }
+}
+@keyframes slideOut {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
