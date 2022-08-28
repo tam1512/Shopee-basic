@@ -3,7 +3,7 @@
   @if ($size == "sm") {
     .wide {
       margin: 0 auto;
-      max-width: 540px;
+      // max-width: 540px;
     }
 
     .row {
@@ -88,8 +88,8 @@
     }
 
     .col-#{$size}-12 {
-      flex: 0 0 8.33333%;
-      max-width: 8.33333%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   } @else if ($size == "md") {
     .wide {
@@ -179,8 +179,8 @@
     }
 
     .col-#{$size}-12 {
-      flex: 0 0 8.33333%;
-      max-width: 8.33333%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   } @else if ($size == "lg") {
     .wide {
@@ -270,8 +270,8 @@
     }
 
     .col-#{$size}-12 {
-      flex: 0 0 8.33333%;
-      max-width: 8.33333%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   } @else if ($size == "xl") {
     .wide {
@@ -361,8 +361,8 @@
     }
 
     .col-#{$size}-12 {
-      flex: 0 0 8.33333%;
-      max-width: 8.33333%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   } @else if ($size == "xxl") {
     .wide {
@@ -452,8 +452,8 @@
     }
 
     .col-#{$size}-12 {
-      flex: 0 0 8.33333%;
-      max-width: 8.33333%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   }
 }
@@ -608,4 +608,31 @@
   -webkit-line-clamp: $line;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@mixin category-link($order) {
+  @if ($order == 1) {
+    background-color: #87afd8;
+  } @else if ($order == 2) {
+    background-color: #76c9bd;
+  } @else if ($order == 3) {
+    background-color: #88cf81;
+  }
+}
+
+@mixin text-decoration($value) {
+  .text-#{$value} {
+    text-decoration: $value;
+  }
+}
+
+@mixin fontSize($name, $value) {
+  .fz-#{$name} {
+    font-size: $value;
+  }
+}
+@mixin textTransform($value) {
+  .text-#{$value} {
+    text-transform: $value;
+  }
 }

@@ -11,6 +11,21 @@
 @include textColor(primary, $primary-color);
 @include textColor(color, $text-color);
 @include textColor(subText, $subText-color);
+@include textColor(sub, $color-sub);
+@include text-decoration(line-through);
+@include fontSize(ss, $fz-ss);
+@include fontSize(sm, $fz-sm);
+@include fontSize(md, $fz-md);
+@include fontSize(lg, $fz-lg);
+@include textTransform(uppercase);
+.link {
+  text-decoration: none;
+}
+
+.ul {
+  list-style-type: none;
+}
+
 .btn {
   @include btn;
   &.btn-primary {
@@ -30,6 +45,10 @@
   & + .btn {
     margin-left: 12px;
   }
+}
+
+.op {
+  opacity: 0.6;
 }
 
 @keyframes slideTop {

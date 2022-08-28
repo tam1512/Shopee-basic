@@ -28,6 +28,42 @@
   color: #999;
 }
 
+.text-sub {
+  color: #666;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.fz-ss {
+  font-size: 1.3rem;
+}
+
+.fz-sm {
+  font-size: 1.4rem;
+}
+
+.fz-md {
+  font-size: 1.5rem;
+}
+
+.fz-lg {
+  font-size: 1.6rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.ul {
+  list-style-type: none;
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -60,6 +96,10 @@
 }
 .btn + .btn {
   margin-left: 12px;
+}
+
+.op {
+  opacity: 0.6;
 }
 
 @keyframes slideTop {

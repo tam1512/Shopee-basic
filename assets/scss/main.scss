@@ -2,10 +2,6 @@
 @import "variables";
 @import "base.scss";
 @include reset;
-.container {
-  width: 100%;
-  height: auto;
-}
 
 // Header
 .header {
@@ -13,26 +9,27 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 9;
 }
 
 // Header Top
 .header-top {
   position: relative;
-  z-index: 999;
+  z-index: 8;
   display: flex;
   justify-content: space-between;
 }
 
 .header-top__btn--search {
   @include flexCenter;
-  @include setWH(56px);
+  @include setWH($header-height);
   cursor: pointer;
 }
 
 .header-top__cart {
   position: relative;
   @include flexCenter;
-  @include setWH(56px);
+  @include setWH($header-height);
   padding-right: 10px;
   cursor: pointer;
 }
@@ -71,7 +68,8 @@
   position: absolute;
   @include flexBetween;
   width: 100%;
-  height: 45px;
+  left: 0;
+  height: $header-sort-input-height;
   background-color: #fff;
   @include bb;
   z-index: 2;
@@ -89,7 +87,7 @@
   outline: none;
   border: none;
   flex: 1;
-  font-size: 1.6rem;
+  font-size: $fz-lg;
   padding: 10px 12px;
 }
 
@@ -111,7 +109,7 @@
   @include flexCenter;
   flex-direction: column;
   position: fixed;
-  top: 56px;
+  top: $header-height;
   left: 0;
   right: 0;
   width: 100%;
@@ -129,7 +127,7 @@
 .cart--empty-desc {
   display: block;
   padding: 20px 0;
-  font-size: 1.6rem;
+  font-size: $fz-lg;
 }
 
 .header-top__cart--list.cart--empty .header-top__cart--empty {
@@ -149,7 +147,7 @@
   height: 300px;
   background: $white-color;
   position: fixed;
-  top: 56px;
+  top: $header-height;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -164,19 +162,19 @@
 .cart-product__header {
   display: block;
   position: fixed;
-  top: 56px;
+  top: $header-height;
   left: 0;
   right: 0;
-  height: 45px;
+  height: $header-sort-input-height;
   padding: 0 15px;
-  font-size: 1.6rem;
-  line-height: 45px;
+  font-size: $fz-lg;
+  line-height: $header-sort-input-height;
   font-weight: 400;
   background-color: $white-color;
   @include bb;
 }
 .cart-product__list {
-  margin-top: 45px;
+  margin-top: $header-sort-input-height;
   list-style-type: none;
   flex: 1;
 }
@@ -200,24 +198,24 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding-left: 10px;
-  font-size: 1.6rem;
+  font-size: $fz-lg;
   height: 80px;
 }
 .cart-product__list--item__desc--name {
   max-height: 4rem;
   line-height: 2rem;
-  font-size: 1.4rem;
+  font-size: $fz-sm;
   font-weight: 450;
   @include ellipsis(2);
 }
 .cart-product__list--item__desc--classify {
-  font-size: 1.4rem;
+  font-size: $fz-sm;
 }
 .cart-product__list--item__price-wrap {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 1.4rem;
+  font-size: $fz-sm;
   height: 60px;
 }
 .price-wrap__price_quantity {
@@ -232,10 +230,9 @@
   padding: 0 3px;
   font-size: 1.2rem;
 }
-.price-wrap__quantity {
-}
+
 .btn__product--delete {
-  font-size: 1.5rem;
+  font-size: $fz-md;
   align-self: flex-end;
   padding: 10px;
 }
@@ -253,15 +250,13 @@
   box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.198);
 }
 
-.cart-product__btn button {
-}
-
 // Sort header
 .header-sort {
   position: absolute;
+  left: 0;
   top: 100%;
   width: 100%;
-  height: 45px;
+  height: $header-sort-input-height;
   background-color: $white-color;
   @include bb;
   z-index: 1;
@@ -279,10 +274,11 @@
   position: relative;
   flex: 1;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: $fz-sm;
   font-weight: 500;
   height: 100%;
   @include flexCenter;
+  cursor: pointer;
 }
 
 .header-sort__item:first-child::before {
@@ -302,4 +298,242 @@
 
 .header-sort__item.text-active {
   color: $primary-color;
+}
+
+// Main containter
+
+.container {
+  margin-top: $container-mt;
+}
+
+.category-mobile {
+  padding: 7px 0;
+}
+.category-mobile__list {
+  overflow-x: auto;
+  @include flexStart;
+}
+.category-mobile__list::-webkit-scrollbar {
+  display: none;
+}
+.category-mobile__item {
+  margin-left: 4px;
+}
+.category-mobile__item--link {
+  display: block;
+  width: 110px;
+  padding: 4px 2px;
+  line-height: $line-height;
+  min-height: calc(2 * $line-height);
+  font-size: $fz-sm;
+  color: $white-color;
+  background-color: #88cf81;
+  border-radius: 2px;
+  font-weight: 400;
+  @include ellipsis(2);
+  padding: 0 6px;
+}
+.category-mobile__item:nth-child(3n + 1) .category-mobile__item--link {
+  @include category-link(1);
+}
+.category-mobile__item:nth-child(3n + 2) .category-mobile__item--link {
+  @include category-link(2);
+}
+.category-mobile__item:nth-child(3n + 3) .category-mobile__item--link {
+  @include category-link(3);
+}
+
+// category main
+.category-main {
+  overflow: hidden;
+  padding: 0 4px;
+}
+.category-main__item {
+  background-color: $white-color;
+  position: relative;
+}
+.category-main__item--image {
+  padding-top: 100%;
+  background-image: url("https://cf.shopee.vn/file/3d8bfe08ab18619434f933e54be393d0_tn");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.category-main__item--desc-wrap {
+  padding: 0 10px;
+}
+
+.category-main__item--name {
+  margin: 10px 0;
+  font-weight: 400;
+  line-height: 1.8rem;
+  height: 3.6rem;
+  @include ellipsis(2);
+}
+.category-main__item--price-original {
+  display: inline-block;
+  margin-right: 10px;
+}
+.category-main__item--action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 0;
+}
+.category-main__item--action.liked .category-main__item--like {
+  display: block;
+}
+.category-main__item--action.liked .category-main__item--no-like {
+  display: none;
+}
+.category-main__item--action .category-main__item--like {
+  display: none;
+  color: $heart-color;
+}
+.category-main__item--rating {
+  font-size: 1rem;
+}
+.category-main__item--rating i.rating-active {
+  color: $rating-color;
+  opacity: 1;
+}
+.category-main__item--sales-quantity {
+  margin-left: 8px;
+  font-weight: 450;
+}
+.category-main__item--origin {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.category-main__item--favorite {
+  position: absolute;
+  top: 10px;
+  background-color: $primary-color;
+  line-height: 1.6rem;
+  padding: 2px 4px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  font-weight: 450;
+  font-size: 1.2rem;
+  left: -4px;
+}
+.category-main__item--favorite i {
+  font-size: 0.9rem;
+  padding-right: 2px;
+}
+.category-main__item--favorite::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  border-top: 3px solid invert($primary-color, 25);
+  border-left: 3px solid transparent;
+}
+.category-main__item--sale-off {
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include setWH(40px, 36px);
+  background-color: $sale-off-color;
+  @include flexAround;
+  flex-direction: column;
+  border-top-right-radius: 2px;
+}
+.category-main__item--sale-off::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  border-width: 0 20px 4px;
+  border-color: transparent $sale-off-color;
+  border-style: solid;
+}
+.category-main__item--sale-percent {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.category-main__item--sale-span {
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+// Pagination
+.category-main__pagination {
+  @include flexCenter;
+  margin: 35px 0 20px;
+}
+.category-main__pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: $fz-md;
+  color: $color-sub;
+  border-radius: 2px;
+  // margin-left: 5px;
+}
+.category-main__pagination a.active {
+  background-color: $primary-color;
+  color: $white-color;
+}
+.category-main__pagination a.disable {
+  cursor: no-drop;
+  opacity: 0.6;
+}
+// Footer
+.footer {
+  padding-top: 20px;
+  background: $white-color;
+  border-top: 4px solid $primary-color;
+}
+.footer__content {
+  padding-bottom: 50px;
+}
+.footer__content--header {
+  margin: 20px 0 10px 0;
+}
+.footer__content--list {
+  padding-bottom: 10px;
+}
+.footer__content--item:hover {
+  cursor: pointer;
+  color: $primary-color;
+}
+.socials {
+  @include flexCenter;
+}
+.socials .footer__content--item {
+  font-size: 2rem;
+  margin: 0 3px;
+}
+
+.footer__download {
+  @include flexCenter;
+}
+.footer__download--QR {
+  @include setWH(80px);
+  object-fit: contain;
+  border: 1px solid $border-color;
+  margin-right: 10px;
+}
+.footer__download--app {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.footer__download--googlePlay,
+.footer__download--appStore {
+  height: 20px;
+  object-fit: cover;
+}
+
+.footer__bottom {
+  // height: 20px;
+}
+.footer__bottom--text {
+  padding: 10px;
 }

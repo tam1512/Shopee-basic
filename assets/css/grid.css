@@ -1,11 +1,10 @@
-/* sm */
 .grid {
+  overflow: hidden;
   width: 100%;
 }
 
 .wide {
   margin: 0 auto;
-  max-width: 100%;
 }
 
 .row {
@@ -90,11 +89,10 @@
 }
 
 .col-sm-12 {
-  flex: 0 0 8.33333%;
-  max-width: 8.33333%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
-/* md */
 @media screen and (min-width: 768px) {
   .wide {
     margin: 0 auto;
@@ -166,12 +164,10 @@
     max-width: 91.66667%;
   }
   .col-md-12 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
-
-/* lg */
 @media screen and (min-width: 992px) {
   .wide {
     margin: 0 auto;
@@ -243,12 +239,10 @@
     max-width: 91.66667%;
   }
   .col-lg-12 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
-
-/* xl */
 @media screen and (min-width: 1200px) {
   .wide {
     margin: 0 auto;
@@ -320,12 +314,14 @@
     max-width: 91.66667%;
   }
   .col-xl-12 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-xl-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
   }
 }
-
-/* xxl */
 @media screen and (min-width: 1400px) {
   .wide {
     margin: 0 auto;
@@ -397,8 +393,8 @@
     max-width: 91.66667%;
   }
   .col-xxl-12 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
