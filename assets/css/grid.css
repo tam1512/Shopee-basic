@@ -1,5 +1,4 @@
 .grid {
-  overflow: hidden;
   width: 100%;
 }
 
@@ -241,6 +240,14 @@
   .col-lg-12 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .col-lg-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .col-lg-9-6 {
+    flex: 0 0 80%;
+    max-width: 80%;
   }
 }
 @media screen and (min-width: 1200px) {

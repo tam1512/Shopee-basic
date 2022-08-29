@@ -587,6 +587,12 @@
   align-items: center;
 }
 
+@mixin flexEnd {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
 @mixin setWH($width, $height: $width) {
   width: $width;
   height: $height;
